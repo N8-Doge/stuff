@@ -1,22 +1,45 @@
 <#
 .SYNOPSIS
   Name: update-repositories.ps1
-  Updates all repositories in current directory
+  Updates all repositories in specified directory.
   
 .DESCRIPTION
-  Runs git pull/fetch in every dectected repository
+  Runs git pull/fetch in every dectected repository.
 
-.PARAMETER Location
-  Location to update. Defaults to working directory
+.PARAMETER location
+  Location to update. Defaults to working directory.
+
+.PARAMETER recurse
+    Recursively checks directories in location.
 
 .PARAMETER fetch
+    Fetches from remote without pulling.
+
+.PARAMETER reset
+    Resets repository to origin/master. Overrides fetch.
 
 .NOTES
-    Author - Nathan Chen
+    Author - Nathan Chen 
+    Created/used for personal purposes
+    Feel free to use/copy with credit
+
+.INPUTS
+    Allowed to pipe a string into -location at position 1
+
+.OUTPUTS
+    Does not generate direct output
 
 .EXAMPLE
-  ./update-repositories.ps1 - Runs script in working directory
+  ./update-repositories.ps1
+  Runs script in working directory
 
+.EXAMPLE
+  ./update-repositories.ps1 $home
+  Runs script in userprofile
+
+.EXAMPLE
+  ./update-repositories.ps1 -fetch
+  Fetches all repositories in working directory
 #>
 
 #-----Parameters-----
