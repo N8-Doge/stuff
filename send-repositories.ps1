@@ -37,7 +37,7 @@ ForEach ($i in list){
             Write-Host ("Commit repository "+$i) -ForegroundColor Yellow -BackgroundColor Black
             $message = Read-Host "Push with message"
             git commit -m $message 2>&1 $null
-            git push origin master 2>&1 $null
+            git push origin master
             if($?){Write-Host ("Committed "+$i) -ForegroundColor Green -BackgroundColor Black}
             else{Write-Host ("Failed to commit "+$i)}
         }
