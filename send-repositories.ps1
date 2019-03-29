@@ -33,12 +33,13 @@ ForEach ($i in list){
     $a = git status 2> $null
     if(($a) -and (parent)){
         if(-not $a.contains("nothing to commit, working tree clean")){
-            git add *
-            Write-Host ("Commit repository "+$i) -ForegroundColor Green -BackgroundColor Black
-            git status
-            $message = Read-Host "Push with message: "
-            git commit -m $message
-            git push origin master
+            git add * 2>&1 $null
+            Write-Host ("Commit repository "+$i) -ForegroundColor Yellow -BackgroundColor Black
+            $message = Read-Host "Push with message"
+            git commit -m $message 2>&1 $null
+            git push origin master 2>&1 $null
+            if($?){Write-Host ("Committed "+$i) -ForegroundColor Green -BackgroundColor Black}
+            else{Write-Host ("Failed to commit "+$i)}
         }
     }
     Pop-Location
