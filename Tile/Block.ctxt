@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=powerable
+comment0.target=Block(boolean)
+comment1.params=blocks\ x\ y
+comment1.target=boolean\ isPowered(java.util.ArrayList,\ int,\ int)
+comment2.params=
+comment2.target=boolean\ isPowerable()
+comment3.params=
+comment3.target=boolean\ isPowering()
+comment4.params=powerable
+comment4.target=void\ setPowerable(boolean)
+comment5.params=powering
+comment5.target=void\ setPowering(boolean)
+numComments=6

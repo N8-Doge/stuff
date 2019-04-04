@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=
+comment0.target=RedstoneBlock()
+comment1.params=powering
+comment1.target=void\ setPowering(boolean)
+numComments=2
